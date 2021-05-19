@@ -1,25 +1,178 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Firefox Relay</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <link rel="shortcut icon" href="https://www.mozilla.org/media/img/favicons/mozilla/favicon.d25d81d39065.ico">
-    <link rel="stylesheet" href="assets/fonts.css">
-    <link rel="stylesheet" href="assets/styles.css">
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link
+      rel="shortcut icon"
+      href="https://www.mozilla.org/media/img/favicons/mozilla/favicon.d25d81d39065.ico"
+    />
+    <link rel="stylesheet" href="assets/fonts.css" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
 
-<body>
-    <!-- Put HTML Here -->
-    
-    <!-- 
-        Font Awesome v5 Free - See https://fontawesome.com/start for more info
-        Example usage: <i class="fas fa-toggle-off"></i>
-     -->
-    <script src="https://kit.fontawesome.com/4c55e184d1.js" crossorigin="anonymous"></script>
+  <header>
+    <nav class="color-header">
+      <a href=""
+        ><img
+          class="logo-relay"
+          width="230.25"
+          height="42.5"
+          src="assets/img/logo-relay.png"
+          alt="logo-relay"
+      /></a>
+      <section class="navbar-text font-metropolis">
+        <a href="" id="home-anchor" class="footer-link selected-page">Home</a>
+        <a href="" id="faq-anchor" class="footer-link">FAQ</a>
+        <a
+          href=""
+          style="vertical-align: middle"
+          class="fas fa-th fa-2x footer-link"
+        ></a>
+        <a
+          href=""
+          style="vertical-align: middle"
+          class="fas fa-circle fa-3x footer-link"
+        ></a>
+      </section>
+    </nav>
+    <!-- The menu below is only viewable on mobile -->
+    <a href="" onclick="userClickedMobileMenu(event)" class="menu"
+      >Menu<i
+        id="mobile-menu-chevron"
+        style="padding-left: 10px"
+        class="fa fa-chevron-down"
+      ></i
+    ></a>
+    <section class="mobile-nav-links">
+      <a href="" class="mobile-nav-link selected-page-mobile">Home</a>
+      <a href="" class="mobile-nav-link">FAQ</a>
+    </section>
+  </header>
+
+  <body class="font-inter">
+    <div class="page-content">
+      <section class="manage-relay-aliases-section">
+        <table class="manage-relay-aliases-table">
+          <caption class="manage-relay-aliases-table-caption">
+            <p class="manage-relay-aliases-header font-metropolis">
+              Manage your Relay aliases
+            </p>
+            <p class="remaining-aliases-text"><b>4</b> remaining aliases</p>
+          </caption>
+        </table>
+        <button class="new-alias-button font-metropolis color-primary">
+          <i class="plus-icon fa fa-plus"></i> Generate New Alias
+        </button>
+        <p class="remaining-aliases-mobile"><b>4</b> remaining aliases</p>
+      </section>
+
+      <table
+        cellspacing="0"
+        cellpadding="0"
+        class="font-metropolis accounts-table"
+      >
+        <caption class="accounts-table-caption">
+          <p class="add-account-name-button">
+            Add account name<i class="pencil-icon fa fa-pencil"></i>
+          </p>
+          <p class="forwarding-container">
+            forwarding<i
+              class="fas fa-toggle-on fa-2x forwarding-toggle-icon"
+            ></i>
+          </p>
+        </caption>
+        <tr class="account-table-row">
+          <td class="email-table-data">
+            <span class="email-text">sw4wo4v1s@relay.firefox.com</span>
+            <i class="far fa-copy copy-icon"></i>
+            <br />
+            <a class="accordion" onclick="userClickedAccordion(event)">
+              Show Details
+              <i id="details-chevron" class="fa fa-chevron-down"></i>
+            </a>
+          </td>
+          <td></td>
+          <td class="forwarded-data">
+            <b><span class="forwarded-value-text">0</span></b
+            ><br />Forwarded
+          </td>
+          <td class="blocked-data">
+            <b><span class="blocked-value-text">0</span></b
+            ><br />Blocked
+          </td>
+        </tr>
+        <tr id="panel-desktop">
+          <td class="panel-desktop-td-left">
+            <span class="created-text-container">
+              <span class="created-text">Created:</span>
+              <br />
+              May 10, 2021
+            </span>
+            <span class="forward-email-container">
+              <span class="forward-email-text">Forward emails to</span>
+              <br />
+              mcrawford@mozilla.com
+            </span>
+          </td>
+          <td></td>
+          <td><button class="font-metropolis delete-button">Delete</button></td>
+        </tr>
+        <tr id="panel-mobile">
+          <td class="panel-mobile-td">
+            <div class="panel-mobile-blocked-container">
+              Blocked<b
+                ><span
+                  class="
+                    panel-mobile-value-text panel-mobile-blocked-value-text
+                  "
+                  >0</span
+                ></b
+              >
+            </div>
+            <div>
+              <span class="panel-mobile-forwarded-text">Forwarded</span
+              ><b
+                ><span
+                  class="
+                    panel-mobile-value-text panel-mobile-forwarded-value-text
+                  "
+                  >0</span
+                ></b
+              >
+            </div>
+            <div class="panel-mobile-created-container">
+              Created: <span class="panel-mobile-value-text">May 10, 2021</span>
+            </div>
+            <button class="font-metropolis delete-button">Delete</button>
+          </td>
+        </tr>
+      </table>
+      <p class="font-inter ff-relay-info-text">
+        Firefox Relay supports email forwarding (including attachments) of email
+        up to 150KB in size
+      </p>
+    </div>
+    <footer>
+      <img
+        class="logo-mozilla"
+        width="125"
+        height="35.74375"
+        src="assets/img/logo-mozilla.svg"
+      />
+      <section class="footer-text font-metropolis">
+        <a class="footer-link">Privacy</a>
+        <a class="footer-link">Relay Terms</a>
+        <a class="footer-link">Legal</a>
+        <a class="github-icon fa fa-github fa-2x footer-link"></a>
+      </section>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/4c55e184d1.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="assets/app.js"></script>
-</body>
-
+  </body>
 </html>

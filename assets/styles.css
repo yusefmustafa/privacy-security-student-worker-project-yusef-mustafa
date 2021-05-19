@@ -1,16 +1,409 @@
 :root {
-    /* Colorful gradient used in the navigation bar */
+  /* Colorful gradient used in the navigation bar */
   --navGradient: linear-gradient(-90deg, #ff9100 0%, #f10366 50%, #6173ff 100%);
+  --navGradientMobile: radial-gradient(
+    circle closest-side,
+    #ff9100 85%,
+    #f10366 0%,
+    transparent
+  );
+  --primaryColor: rgb(0, 95, 223);
+  --headerColor: rgb(43, 39, 79);
+  --mobileNavLinkBackgroundColor: rgb(47, 47, 83);
+  --panelBackgroundColor: rgb(241, 241, 243);
 }
 
 /* Body font */
 .font-inter {
-    font-family: "Inter UI", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: "Inter UI", Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 /* Used for all titles/labels/buttons  */
 .font-metropolis {
-    font-family: "Metropolis", Arial, Helvetica, sans-serif;
+  font-family: "Metropolis", Arial, Helvetica, sans-serif;
 }
 
-/* Put CSS Styles Here */
+.color-header {
+  background-color: rgb(43, 39, 79);
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background-image: url(/assets/img/background.svg), none;
+  background-size: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.page-content {
+  min-height: 84vh;
+}
+
+footer {
+  height: 100px;
+  margin-top: -100px;
+  background-color: var(--headerColor);
+}
+
+.footer-text {
+  margin-top: 30px;
+  font-size: 15px;
+  margin-right: 40px;
+  float: right;
+  color: white;
+}
+
+.footer-link {
+  padding-right: 23px;
+}
+
+.logo-mozilla {
+  margin-left: 25px;
+  margin-top: 30px;
+  float: left;
+}
+
+.manage-relay-aliases-header {
+  float: left;
+  padding-top: 10px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.remaining-aliases-text {
+  float: right;
+  padding-top: 24px;
+}
+
+.add-account-name-button {
+  float: left;
+  margin-left: 10px;
+  color: grey;
+}
+
+.pencil-icon {
+  padding-left: 10px;
+}
+
+.forwarding-container {
+  float: right;
+  color: grey;
+}
+
+.manage-relay-aliases-table {
+  border-top: 2px solid #bbb;
+  width: 100%;
+}
+
+nav {
+  line-height: 65px;
+  height: 80px;
+}
+
+.logo-relay {
+  float: left;
+  margin-left: 35px;
+  margin-top: 17.5px;
+  vertical-align: center;
+}
+
+.plus-icon {
+  padding-right: 10px;
+}
+
+.navbar-text {
+  font-size: 15px;
+  float: right;
+  color: white;
+  margin-top: 10px;
+  margin-right: 5px;
+}
+
+.accounts-table {
+  width: 85%;
+  margin-top: 100px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.accounts-table-caption {
+  margin-bottom: -10px;
+}
+
+.new-alias-button {
+  float: right;
+  margin-top: 15px;
+  border-radius: 5px;
+  width: 225px;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  font-size: 17px;
+  background-color: var(--primaryColor);
+  cursor: pointer;
+}
+
+.account-table-row {
+  box-shadow: 0 0 10px #bbb;
+  line-height: 25px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.email-table-data {
+  padding: 15px;
+}
+
+#details-chevron {
+  padding-left: 10px;
+}
+
+.forwarding-toggle-icon {
+  color: var(--primaryColor);
+  vertical-align: sub;
+  padding-left: 10px;
+}
+
+.github-icon {
+  vertical-align: sub;
+}
+
+.selected-page {
+  display: inline-block;
+  text-decoration: none;
+  background-image: var(--navGradient);
+  background-position: left 80%;
+  background-repeat: no-repeat;
+  background-size: 65% 3px;
+}
+
+.accordion {
+  cursor: pointer;
+  color: grey;
+}
+
+#panel-desktop {
+  background-color: var(--panelBackgroundColor);
+  box-shadow: 0 0 10px #bbb;
+  line-height: 20px;
+  display: none;
+}
+
+#panel-mobile {
+  background-color: var(--panelBackgroundColor);
+  box-shadow: 0 0 10px #bbb;
+  line-height: 35px;
+  display: none;
+}
+
+.delete-button {
+  float: right;
+  border-radius: 5px;
+  color: grey;
+  border: none;
+  padding: 12px 16px;
+  margin-right: 16px;
+  font-size: 17px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.email-text {
+  font-weight: 600;
+}
+
+.mobile-nav-links {
+  display: none;
+  width: 100%;
+  float: right;
+}
+
+.mobile-nav-link,
+.remaining-aliases-mobile,
+.menu,
+.remaining-aliases-text-mobile {
+  display: none;
+}
+
+.manage-relay-aliases-section {
+  width: 85%;
+  margin-top: 75px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.forwarded-value-text,
+.blocked-value-text {
+  font-size: 24px;
+}
+
+.forwarded-data {
+  text-align: center;
+  float: right;
+  padding: 15px;
+}
+
+.blocked-data {
+  text-align: center;
+  float: right;
+  padding: 15px;
+  color: grey;
+}
+
+.panel-desktop-td-left,
+.panel-mobile-td {
+  padding: 15px;
+}
+
+.created-text-container {
+  float: left;
+}
+
+.created-text,
+.forward-email-text,
+.panel-mobile-forwarded-text,
+.panel-mobile-created-container,
+.copy-icon {
+  color: grey;
+}
+
+.forward-email-container {
+  float: left;
+  margin-left: 75px;
+}
+
+.panel-mobile-blocked-container {
+  color: #c0c0c0;
+}
+
+.panel-mobile-value-text {
+  float: right;
+}
+
+.panel-mobile-blocked-value-text,
+.panel-mobile-forwarded-value-text {
+  font-size: 24px;
+}
+
+.ff-relay-info-text {
+  margin-top: 30px;
+  margin-left: 7%;
+}
+
+@media only screen and (max-width: 786px) {
+  .navbar-text :first-child {
+    display: none;
+  }
+
+  .navbar-text :nth-child(2) {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+    background-color: var(--mobileNavLinkBackgroundColor);
+  }
+
+  .logo-relay {
+    margin-left: 15px;
+    margin-top: 27px;
+    width: 153.5px;
+    height: 28.33px;
+  }
+
+  .navbar-text {
+    margin-top: 5px;
+  }
+
+  .manage-relay-aliases-section {
+    margin-top: 45px;
+  }
+
+  .accounts-table {
+    margin-top: 50px;
+  }
+
+  .manage-relay-aliases-header {
+    float: none;
+  }
+
+  .remaining-aliases-text,
+  .add-account-name-button,
+  .forwarded-data,
+  .blocked-data {
+    display: none;
+  }
+
+  .remaining-aliases-mobile {
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .new-alias-button {
+    float: none;
+    margin: 15px auto;
+    display: block;
+  }
+
+  .mobile-nav-link {
+    display: block;
+    background-color: var(--mobileNavLinkBackgroundColor);
+    text-align: right;
+    padding-right: 10px;
+    padding-bottom: 10px;
+  }
+
+  .selected-page-mobile {
+    display: list-item;
+    list-style-type: circle;
+    list-style-position: inside;
+    list-style-image: var(--navGradientMobile);
+  }
+
+  footer {
+    height: 300px;
+  }
+
+  .logo-mozilla {
+    float: none;
+    margin: 0 auto;
+    padding-top: 25px;
+    padding-bottom: 20px;
+    width: 100%;
+  }
+
+  .footer-link {
+    padding: 15px;
+    display: block;
+  }
+
+  .footer-text {
+    text-align: center;
+    float: none;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .page-content {
+    min-height: 82vh;
+  }
+
+  .delete-button {
+    width: 100%;
+    margin: 15px auto;
+    float: none;
+  }
+}
