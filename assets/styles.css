@@ -11,6 +11,7 @@
   --navBackgroundColor: rgb(43, 39, 79);
   --mobileNavLinkBackgroundColor: rgb(47, 47, 83);
   --panelBackgroundColor: rgb(241, 241, 243);
+  --tableRowBoxShadow: 0 0 10px #bbb;
 }
 
 /* Body font */
@@ -148,8 +149,13 @@ nav {
   cursor: pointer;
 }
 
+.account-table-row, #panel-desktop, #panel-mobile {
+  box-shadow: var(--tableRowBoxShadow);
+  -webkit-box-shadow: var(--tableRowBoxShadow);
+  -moz-box-shadow:var(--tableRowBoxShadow);
+}
+
 .account-table-row {
-  box-shadow: 0 0 10px #bbb;
   line-height: 25px;
   background-color: white;
   border-radius: 10px;
@@ -189,14 +195,12 @@ nav {
 
 #panel-desktop {
   background-color: var(--panelBackgroundColor);
-  box-shadow: 0 0 10px #bbb;
   line-height: 20px;
   display: none;
 }
 
 #panel-mobile {
   background-color: var(--panelBackgroundColor);
-  box-shadow: 0 0 10px #bbb;
   line-height: 35px;
   display: none;
 }
@@ -395,7 +399,7 @@ nav {
   }
 
   .page-content {
-    min-height: 82vh;
+    min-height: 100vh;
   }
 
   .delete-button {
