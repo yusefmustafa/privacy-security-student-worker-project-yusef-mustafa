@@ -8,7 +8,7 @@
     transparent
   );
   --primaryColor: rgb(0, 95, 223);
-  --headerColor: rgb(43, 39, 79);
+  --navBackgroundColor: rgb(43, 39, 79);
   --mobileNavLinkBackgroundColor: rgb(47, 47, 83);
   --panelBackgroundColor: rgb(241, 241, 243);
 }
@@ -21,10 +21,6 @@
 /* Used for all titles/labels/buttons  */
 .font-metropolis {
   font-family: "Metropolis", Arial, Helvetica, sans-serif;
-}
-
-.color-header {
-  background-color: rgb(43, 39, 79);
 }
 
 html,
@@ -50,7 +46,7 @@ a {
 footer {
   height: 100px;
   margin-top: -100px;
-  background-color: var(--headerColor);
+  background-color: var(--navBackgroundColor);
 }
 
 .footer-text {
@@ -106,6 +102,7 @@ footer {
 nav {
   line-height: 65px;
   height: 80px;
+  background-color: var(--navBackgroundColor);
 }
 
 .logo-relay {
